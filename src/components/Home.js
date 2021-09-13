@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Code from './Code'
 import {htmlcode} from './store/code'
+// require   './htmlpage/page.html'
+
 function Home() {
     const [width, setWidth] = useState("576")
     const [code, setCode] = useState(false)
@@ -24,10 +26,17 @@ function Home() {
                 </div>
                 <div className="h-96 bg-gray-200 overflow-x-auto">
                    {code ?  <Code /> : ""}
-                    <iframe src="https://flaviocopes.com/how-to-render-html-react/" 
+                    <iframe src="https://flaviocopes.com/how-to-render-html-react/"
                     className="h-full mx-auto"
-                    style={{width:`${width}px`}}></iframe>
+                    style={{width:`${width}px`}}>
+                        
+                        {/*  file:///home/my/Documents/page-view/src/htmlpage/page.html*/}
+                        {/* src="https://flaviocopes.com/how-to-render-html-react/" */}
+                    </iframe>
+                    <div   dangerouslySetInnerHTML={{ __html: htmlcode}} />
+
                 </div>
+           
 
                
            </div>

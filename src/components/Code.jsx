@@ -6,7 +6,12 @@ function Code() {
         <div>
             <div className="w-full bg-white h-80 overflow-auto">
                 <div className="container mx-auto p-4">
-                {htmlcode}
+                    <pre>
+                        <code>
+                            {htmlcode}
+                        </code>
+                    </pre>
+               
                 </div>
             </div>
             
