@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-
+import Code from './Code'
 function Home() {
     const [width, setWidth] = useState("576")
+    const [code, setCode] = useState(false)
     return (
         <div className="my-20">
            <div className="container mx-auto  border border-gray-300 rounded-sm ">
@@ -16,11 +17,12 @@ function Home() {
                     <div className="flex space-x-4 text-sm">
                         <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-fullscreen-exit-fill"></i> &nbsp; Full screen preview</button>
                         <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-download-line"></i> &nbsp; Download</button>
-                        <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-code-view"></i> &nbsp; Source Code</button>
+                        <button onClick={()=>setCode(!code)} className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-code-view"></i> &nbsp; Source Code</button>
                         <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-file-copy-line"></i></button>
                     </div>
                 </div>
                 <div className="h-96 bg-gray-200 overflow-x-auto">
+                   {code ?  <Code /> : ""}
                     <iframe src="https://www.w3schools.com" 
                     className="h-full mx-auto"
                     style={{width:`${width}px`}}></iframe>
