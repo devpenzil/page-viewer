@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Code from './Code'
+import {htmlcode} from './store/code'
 function Home() {
     const [width, setWidth] = useState("576")
     const [code, setCode] = useState(false)
@@ -15,7 +16,7 @@ function Home() {
                         <button onClick={()=>{setWidth("1200")}}><i class="ri-mac-line text-xl"></i> <br /> xl</button>
                     </div>
                     <div className="flex space-x-4 text-sm">
-                        <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-fullscreen-exit-fill"></i> &nbsp; Full screen preview</button>
+                        <button onClick={()=>{window.open("src/htmlpage/page.html")}} className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-fullscreen-exit-fill"></i> &nbsp; Full screen preview</button>
                         <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-download-line"></i> &nbsp; Download</button>
                         <button onClick={()=>setCode(!code)} className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-code-view"></i> &nbsp; Source Code</button>
                         <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"><i class="ri-file-copy-line"></i></button>
@@ -23,10 +24,12 @@ function Home() {
                 </div>
                 <div className="h-96 bg-gray-200 overflow-x-auto">
                    {code ?  <Code /> : ""}
-                    <iframe src="https://www.w3schools.com" 
+                    <iframe src="https://flaviocopes.com/how-to-render-html-react/" 
                     className="h-full mx-auto"
                     style={{width:`${width}px`}}></iframe>
                 </div>
+
+               
            </div>
         </div>
     )
