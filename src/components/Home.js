@@ -24,7 +24,7 @@ function Home() {
                 setWidth("360");
               }}
             >
-              <i class="ri-cellphone-line text-xl"></i> <br />
+              <i className="ri-cellphone-line text-xl"></i> <br />
               xs
             </button>
             <button
@@ -32,14 +32,14 @@ function Home() {
                 setWidth("576");
               }}
             >
-              <i class="ri-smartphone-line text-xl"></i> <br /> sm
+              <i className="ri-smartphone-line text-xl"></i> <br /> sm
             </button>
             <button
               onClick={() => {
                 setWidth("768");
               }}
             >
-              <i class="ri-tablet-line text-xl"></i> <br /> md
+              <i className="ri-tablet-line text-xl"></i> <br /> md
             </button>
             <button
               onClick={() => {
@@ -53,7 +53,7 @@ function Home() {
                 setWidth("1200");
               }}
             >
-              <i class="ri-mac-line text-xl"></i> <br /> xl
+              <i className="ri-mac-line text-xl"></i> <br /> xl
             </button>
           </div>
           <div className="flex space-x-4 text-sm">
@@ -63,19 +63,19 @@ function Home() {
               }}
               className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"
             >
-              <i class="ri-fullscreen-exit-fill"></i> &nbsp; Full screen preview
+              <i className="ri-fullscreen-exit-fill"></i> &nbsp; Full screen preview
             </button>
             <button className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg">
-              <i class="ri-download-line"></i> &nbsp; Download
+             <a href="src/htmlpage/page.zip" download="page.zip"> <i className="ri-download-line"></i> &nbsp; Download</a>
             </button>
             <button
               onClick={() => setCode(!code)}
               className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg"
             >
-              <i class="ri-code-view"></i> &nbsp; Source Code
+              <i className="ri-code-view"></i> &nbsp; Source Code
             </button>
             <button onClick={copycode} className="flex flex-row items-center border px-4 border-gray-200 hover:shadow-lg">
-              <i class="ri-file-copy-line"></i> &nbsp; {copy}
+              <i className="ri-file-copy-line"></i> &nbsp; {copy}
             </button>
           </div>
         </div>
